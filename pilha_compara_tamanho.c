@@ -58,14 +58,32 @@ void destruir_pilha(Pilha *p){
     free(p);
 }
 
+void compara_tamanho(Pilha *p1, Pilha *p2){
 
+    if(tamanho(p1) == tamanho(p2)){
+        printf("Iguais");
+    } else if(tamanho(p1) > tamanho(p2)){
+        printf("Pilha 1 maior");
+    } else {
+        printf("Pilha 2 maior");
+    }
+}
 
 int main(){
 
-    Pilha p = criar_pilha(p);
+    Pilha *p1 = criar_pilha();
+    Pilha *p2 = criar_pilha();
 
+    push(p1, 2);
+    push(p1, 3);
+    push(p1, 1);
+    push(p1, 1);
     
-    
+    push(p2, 5);
+    push(p2, 5);
+    push(p2, 5);
+
+    compara_tamanho(p1, p2);
 
     return 0;
 }
